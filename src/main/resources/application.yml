@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: modern-concurrency-demo
+  threads:
+    virtual:
+      enabled: true # V.IMP!! - to enable Virtual Threads
+
+logging:
+#  pattern:
+#    console: "%d{HH:mm:ss} %-5level [%15thread] %msg%n"
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.http: DEBUG
+#    logging.level.org.apache.http: DEBUG
+#    java.net.http: DEBUG
+#    org.springframework.web.client: DEBUG
+
+server:
+  servlet:
+    context-path: /concurrency
+
+services:
+  cars:
+    url: https://my.api.mockaroo.com/cars.json?key=ff157210
