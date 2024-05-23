@@ -1,8 +1,8 @@
 package com.svb.modernconcurrencydemo.controller;
 
 import com.svb.modernconcurrencydemo.model.ApiCallStatistics;
-import com.svb.modernconcurrencydemo.model.BestPriceResult;
-import com.svb.modernconcurrencydemo.services.BestPriceCarDealerService;
+import com.svb.modernconcurrencydemo.model.car.BestCarPriceResult;
+import com.svb.modernconcurrencydemo.services.car.BestPriceCarDealerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.Duration;
 import java.time.Instant;
 
+/**
+ * Case 1: Shutdown when all threads complete.
+ * Ex: Query car make price across 3 dealers, and publish the best price along with all available quotes
+ */
 @RestController
 @RequestMapping("/api/cars/marketplace")
 public class BestPriceCarController {
@@ -21,13 +25,13 @@ public class BestPriceCarController {
     public static final ScopedValue<ApiCallStatistics> apiCallStatisticsScopedValue = ScopedValue.newInstance();
 
     @GetMapping("/bestprice")
-    public BestPriceResult getBestPricedCar(@RequestParam String make){
+    public BestCarPriceResult getBestPricedCar(@RequestParam String make){
         ApiCallStatistics apiCallStatistics = new ApiCallStatistics();
 
         try {
             Instant before = Instant.now();
 
-            BestPriceResult bestPriceResult = ScopedValue.callWhere(apiCallStatisticsScopedValue, apiCallStatistics, ()->bestPriceCarDealerService.getBestPricedCar(make));
+            BestCarPriceResult bestPriceResult = ScopedValue.callWhere(apiCallStatisticsScopedValue, apiCallStatistics, ()->bestPriceCarDealerService.getBestPricedCar(make));
 
             Instant after = Instant.now();
             Duration duration = Duration.between(before, after);

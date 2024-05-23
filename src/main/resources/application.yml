@@ -23,3 +23,5 @@ server:
 services:
   cars:
     url: https://my.api.mockaroo.com/cars.json?key=ff157210
+  stocks:
+    url: https://my.api.mockaroo.com/stocks.json?key=ff157210

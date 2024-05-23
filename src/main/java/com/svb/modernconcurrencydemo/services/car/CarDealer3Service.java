@@ -1,6 +1,6 @@
-package com.svb.modernconcurrencydemo.services;
+package com.svb.modernconcurrencydemo.services.car;
 
-import com.svb.modernconcurrencydemo.model.Car;
+import com.svb.modernconcurrencydemo.model.car.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

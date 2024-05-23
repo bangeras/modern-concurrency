@@ -1,4 +1,4 @@
-package com.svb.modernconcurrencydemo.model;
+package com.svb.modernconcurrencydemo.model.car;
 
 import java.text.NumberFormat;
 import java.text.ParseException;

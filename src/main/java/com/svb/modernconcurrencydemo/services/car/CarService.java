@@ -1,14 +1,12 @@
-package com.svb.modernconcurrencydemo.services;
+package com.svb.modernconcurrencydemo.services.car;
 
 import com.svb.modernconcurrencydemo.controller.BestPriceCarController;
 import com.svb.modernconcurrencydemo.model.ApiCallStatistics;
-import com.svb.modernconcurrencydemo.model.BestPriceResult;
-import com.svb.modernconcurrencydemo.model.Car;
+import com.svb.modernconcurrencydemo.model.car.Car;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 

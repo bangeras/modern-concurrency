@@ -1,6 +1,6 @@
-package com.svb.modernconcurrencydemo.services;
+package com.svb.modernconcurrencydemo.services.car;
 
-import com.svb.modernconcurrencydemo.model.Car;
+import com.svb.modernconcurrencydemo.model.car.Car;
 
 import java.util.List;
 

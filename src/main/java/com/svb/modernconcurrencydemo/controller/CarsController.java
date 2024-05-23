@@ -1,7 +1,7 @@
 package com.svb.modernconcurrencydemo.controller;
 
-import com.svb.modernconcurrencydemo.model.Car;
-import com.svb.modernconcurrencydemo.services.CarService;
+import com.svb.modernconcurrencydemo.model.car.Car;
+import com.svb.modernconcurrencydemo.services.car.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
