@@ -23,7 +23,7 @@ public class CarService {
     @Value("${services.cars.url}")
     private String carsURI;
 
-    private RestClient restClient = RestClient.create();
+    private final RestClient restClient = RestClient.create();
 
     protected List<Car> getAllCars(){
         logger.info("Getting cars data from {}", carsURI);

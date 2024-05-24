@@ -12,7 +12,6 @@ import org.springframework.web.client.RestClient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.StructuredTaskScope;
 
 @Service
@@ -22,7 +21,7 @@ public class StockPriceService {
     @Value("${services.stocks.url}")
     private String stocksURI;
 
-    private RestClient restClient = RestClient.create();
+    private final RestClient restClient = RestClient.create();
 
     public StockPriceResult getStockPrice(String symbol, String source){
         logger.info("Fetching {} stock price from {}", source, stocksURI);

@@ -5,5 +5,5 @@ import com.svb.modernconcurrencydemo.model.car.Car;
 import java.util.List;
 
 public interface ICarService {
-    public List<Car> getCarsByMake(String make);
+    List<Car> getCarsByMake(String make);
 }
